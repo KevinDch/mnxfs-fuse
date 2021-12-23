@@ -17,14 +17,11 @@ void func1()
     FUNCTION_INFO;
     OBTAIN_STACK_FRAME;
 
-
-
     func2();
 }
 
 int main(int argc, char ** argv)
 {
-    __path_to_executable = *argv;
     __check_addr2line();
     __is_time_enabled = true;
 

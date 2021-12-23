@@ -42,7 +42,7 @@ std::string __get_addr(const std::string& input)
 
     for (auto i : input)
     {
-        if (i == '[')
+        if (i == '+')
         {
             start = true;
             continue;
@@ -50,7 +50,7 @@ std::string __get_addr(const std::string& input)
 
         if (start)
         {
-            if (i != ']')
+            if (i != ')')
             {
                 output += i;
             }

@@ -10,10 +10,10 @@
 #include <utility>
 #include <cstring>
 
-#define MSGMAP_EXT_LIB_ERR      0xA0000001      /* External library error */
+#define EXT_LIB_ERR     0xA0000001      /* External library error */
 
 /// Filesystem Error Type
-class msgmap_error_t : public std::exception
+class mnxfs_error : public std::exception
 {
 private:
     uint32_t error_code;
@@ -22,7 +22,7 @@ private:
 public:
     /// Generate a error with error code
     /** @param _code Your error code **/
-    explicit msgmap_error_t(unsigned int _code) noexcept : error_code(_code), _errno(errno) {}
+    explicit mnxfs_error(unsigned int _code) noexcept : error_code(_code), _errno(errno) {}
 
     /// Return explanation of current error
     [[nodiscard]] const char * what() const noexcept override;

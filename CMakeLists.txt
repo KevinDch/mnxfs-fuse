@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-set(PROJECT_NAME "CMake_Template")
+set(PROJECT_NAME "mnxfs")
 set(PROJECT_VERSION "0.0.1")
 
 project(${PROJECT_NAME})
@@ -11,7 +11,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 include(modules/func_def.cmake)
 
-if ("X${CMAKE_BUILD_TYPE}" STREQUAL "XDebug")
+if ("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
     add_compile_definitions(CMAKE_BUILD_DEBUG=1)
 endif()
 
@@ -32,7 +32,7 @@ default_definition(${MARCO_PREFIX}_PREFIX "\"(${PROJECT_NAME}) \"")
 
 # STEMPFS Static Library
 add_library(${PROJECT_NAME}
-        src/msgmap_error.cpp    src/include/msgmap_error.h
+        src/mnxfs_error.cpp     src/include/mnxfs_error.h
         src/debug.cpp           src/include/debug.h
         )
 target_include_directories(${PROJECT_NAME} PUBLIC src/include)
