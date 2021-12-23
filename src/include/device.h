@@ -13,6 +13,7 @@ public:
     explicit device(const std::string & path_to_device);
     off64_t read(char * buffer, off64_t size, off64_t offset);
     off64_t write(const char * buffer, off64_t size, off64_t offset);
+    off64_t device_size();
 };
 
 

@@ -22,3 +22,9 @@ off64_t device::write(const char *buffer, off64_t size, off64_t offset)
     device_file.write(buffer, size);
     return device_file.tellp() - offset;
 }
+
+off64_t device::device_size()
+{
+    device_file.seekg(0, std::ios::end);
+    return device_file.tellg();
+}

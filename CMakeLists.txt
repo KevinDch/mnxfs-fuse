@@ -35,9 +35,14 @@ add_library(${PROJECT_NAME}
         src/mnxfs_error.cpp     src/include/mnxfs_error.h
         src/debug.cpp           src/include/debug.h
         src/include/mnxfs.h
-        src/device.cpp          src/include/device.h)
+        src/device.cpp          src/include/device.h
+        src/utils.cpp           src/include/utils.h)
 target_include_directories(${PROJECT_NAME} PUBLIC src/include)
 target_link_libraries(${PROJECT_NAME} PUBLIC ${EXTERNAL_LIBRARIES})
+
+_add_sig_exec(mount.mnxfs)
+_add_sig_exec(fsck.mnxfs)
+_add_sig_exec(mkfs.mnxfs)
 
 # Unit tests
 if ("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
