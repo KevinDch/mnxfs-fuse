@@ -10,7 +10,7 @@
 int main()
 {
     try {
-        throw msgmap_error_t(MSGMAP_EXT_LIB_ERR);
+        throw mnxfs_error(EXT_LIB_ERR);
     }
     catch (std::exception & err)
     {

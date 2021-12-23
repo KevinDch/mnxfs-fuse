@@ -1,5 +1,5 @@
-#ifndef C51_EMU_DEBUG_H
-#define C51_EMU_DEBUG_H
+#ifndef MNXFS_DEBUG_H
+#define MNXFS_DEBUG_H
 
 /** @file
  *
@@ -109,4 +109,4 @@ public:
 
 #endif // CMAKE_BUILD_DEBUG
 
-#endif //C51_EMU_DEBUG_H
+#endif //MNXFS_DEBUG_H

@@ -34,12 +34,14 @@ default_definition(${MARCO_PREFIX}_PREFIX "\"(${PROJECT_NAME}) \"")
 add_library(${PROJECT_NAME}
         src/mnxfs_error.cpp     src/include/mnxfs_error.h
         src/debug.cpp           src/include/debug.h
-        )
+        src/include/mnxfs.h
+        src/device.cpp          src/include/device.h)
 target_include_directories(${PROJECT_NAME} PUBLIC src/include)
 target_link_libraries(${PROJECT_NAME} PUBLIC ${EXTERNAL_LIBRARIES})
 
 # Unit tests
-if ("X${CMAKE_BUILD_TYPE}" STREQUAL "XDebug")
+if ("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
     _add_test(error       "Error test")
     _add_test(debug       "Debug test")
+    _add_test(device      "Device test")
 endif()

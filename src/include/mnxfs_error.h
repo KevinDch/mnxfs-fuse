@@ -1,5 +1,5 @@
-#ifndef MSGMAP_ERROR_H
-#define MSGMAP_ERROR_H
+#ifndef MNXFS_ERROR_H
+#define MNXFS_ERROR_H
 
 /** @file
  *
@@ -10,7 +10,8 @@
 #include <utility>
 #include <cstring>
 
-#define EXT_LIB_ERR     0xA0000001      /* External library error */
+#define EXT_LIB_ERR         0xA0000001      /* External library error */
+#define CANNOT_OPEN_DEVICE  0xA0000002      /* Cannot open device */
 
 /// Filesystem Error Type
 class mnxfs_error : public std::exception
@@ -37,4 +38,4 @@ public:
     [[nodiscard]] unsigned int my_errcode() const noexcept { return error_code; }
 };
 
-#endif //MSGMAP_ERROR_H
+#endif //MNXFS_ERROR_H
